@@ -1,13 +1,23 @@
-// ============================================= / 
-//              Buttons                          / 
-// ============================================= / 
+// ============================================= /
+//              Buttons                          /
+// ============================================= /
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
 
 $buttons: (
-    '.default': #51ddfc,
-    '.error': #e4757a,
-    '.info': #927bc1,
-    '.success': #63cc82,
-    '.warning': #fd7856,
+    '.default': $color-secondary,
+    '.error': $accent-color-one,
+    '.info': $accent-color-two,
+    '.success': $accent-color-three,
+    '.warning': $accent-color-four,
 );
 
 @each $button, $color in $buttons {

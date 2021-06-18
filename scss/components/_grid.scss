@@ -1,6 +1,24 @@
-// ======================================
-//  Loops
-// ======================================
+// ============================================= /
+//              Grid System                      /
+// ============================================= /
+
+.container {
+    padding: 0 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 10px;
+}
+
+[class^=col] {
+    margin-top: 10px;
+    flex-basis: 100%;
+    min-height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+}
 
 $grid-colors: (
     1: $accent-color-two,
@@ -23,3 +41,6 @@ $grid-colors: (
     }
 }
 
+.card {
+    flex-basis: 100%;
+}
