@@ -24,3 +24,15 @@
     color: #fff;
     background-color: #58e1c1;
   }
+
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .nav-link {
+    flex-basis: 100px;
+  }
+}
