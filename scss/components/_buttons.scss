@@ -10,15 +10,13 @@
     padding: 10px 0;
     text-transform: uppercase;
     border-radius: 5px;
+    @include mq {
+        padding: 10px 30px;
+        + .btn {
+            margin-left: 10px;
+        }
+    }
 }
-
-$buttons: (
-    '.default': $color-secondary,
-    '.error': $accent-color-one,
-    '.info': $accent-color-two,
-    '.success': $accent-color-three,
-    '.warning': $accent-color-four,
-);
 
 @each $button, $color in $buttons {
     #{$button} {
@@ -27,15 +25,5 @@ $buttons: (
     #{$button}:hover {
         background-color: lighten($color, 15%);
         transition: all .7s;
-    }
-}
-
-@media (min-width: 768px) {
-    .btn {
-        padding: 10px 30px;
-    }
-    
-    .btn + .btn {
-        margin-left: 10px;
     }
 }

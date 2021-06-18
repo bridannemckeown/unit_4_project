@@ -21,17 +21,12 @@
       color: $white;
       background-color: $color-primary;
     }
-}
-
-
-@media (min-width: 768px) {
-  .nav {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .nav-link {
-    flex-basis: 100px;
-  }
+    @include mq {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      &-link {
+        flex-basis: 100px;
+      }
+    }
 }
