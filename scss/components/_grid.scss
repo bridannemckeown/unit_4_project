@@ -4,12 +4,19 @@
 
 .container {
     padding: 0 10px;
+    @include mq {
+      max-width: 1400px;
+      @include center;
+    }
 }
 
 .row {
     display: flex;
     flex-direction: column;
     padding: 1em 10px;
+    @include mq {
+      flex-direction: row;
+    }
 }
 
 [class^=col] {
@@ -18,22 +25,16 @@
     min-height: 25px;
     padding: 10px;
     border-radius: 5px;
+    @include mq {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      align-items: center;
+      + [class^=col] {
+        margin-left: 10px;
+      }
+    }
 }
-
-$grid-colors: (
-    1: $accent-color-two,
-    2: $accent-color-four,
-    3: #deb2ee,
-    4: #7ee6fd,
-    5: #88d9a0,
-    6: #4da2bb,
-    7: #ec9fa3,
-    8: #fd9f85,
-    9: $accent-color-one,
-    10: $accent-color-three,
-    11: #51ddfc,
-    12: #80e8d1,
-);
 
 @for $i from 1 through 12 {
     .theme.col-#{$i} {
@@ -45,32 +46,10 @@ $grid-colors: (
     flex-basis: 100%;
 }
 
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 1400px;
-    @include center;
-  }
-  
+@include mq {
   .centered {
     @include center;
-  }
-  
-  .row {
-    flex-direction: row;
-  }
-  
-  [class^=col] {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
-    align-items: center;
-  }
-  
-  [class^=col] + [class^=col] {
-    margin-left: 10px;
-  }
-   
+  }  
   @for $i from 1 through 12 {
     .col-#{$i} {
       flex-basis: calc(#{$i}*8.33%);
